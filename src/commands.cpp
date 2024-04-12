@@ -727,9 +727,9 @@ int pwrCmd(int argCnt)
             {
                 sprintf(outBfr, "Starting NIC power up sequence, delay = %d msec", EEPROMData.pwr_seq_delay_msec);
                 SHOW();
-                writePin(OCP_MAIN_PWR_EN, 1);
-                delay(EEPROMData.pwr_seq_delay_msec);
                 writePin(OCP_AUX_PWR_EN, 1);
+                delay(EEPROMData.pwr_seq_delay_msec);
+                writePin(OCP_MAIN_PWR_EN, 1);
 
                 // NIC card takes a bit of time to power up
                 delay(50);
